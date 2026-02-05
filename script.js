@@ -119,7 +119,15 @@ document.querySelectorAll('.nav-link, .basic-card').forEach(link => {
             link.classList.add('active');
         }
         
-        // In a real application, this would navigate to the actual page
+        // Show content on mobile
+        if (window.innerWidth <= 768) {
+            const content = document.querySelector('.content');
+            if (content) {
+                content.classList.add('active');
+            }
+        }
+        
+        // In a real application, this would navigate to actual page
         console.log('Navigate to:', link.getAttribute('href'));
     });
 });
@@ -132,6 +140,14 @@ document.querySelectorAll('.nav-toggle').forEach(toggle => {
         document.querySelectorAll('.nav-link').forEach(item => {
             item.classList.remove('active');
         });
+        
+        // Show content on mobile when dropdown is opened
+        if (window.innerWidth <= 768) {
+            const content = document.querySelector('.content');
+            if (content) {
+                content.classList.add('active');
+            }
+        }
     });
 });
 
