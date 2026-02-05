@@ -399,7 +399,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .header {
         padding: 0 1rem;
     }
