@@ -399,7 +399,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .header {
         padding: 0 1rem;
     }
@@ -427,11 +427,11 @@ body {
     
     .content {
         padding: 1rem;
-        display: none;
+        display: none !important;
     }
     
     .content.active {
-        display: block;
+        display: block !important;
     }
     
     .basics-grid {
