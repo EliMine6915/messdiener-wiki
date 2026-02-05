@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messdiener Wiki Alt-Hürth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="site icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="favicon.ico" alt="⛪" style="width: 50px; height: 50px;">
+                <div class="logo-text">
+                    <span class="logo">Messdiener Wiki</span>
+                    <span class="version">v0.2.0</span>
+                </div>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-container" id="searchContainer">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <span class="search-text">Search...</span>
+                    <span class="search-shortcut">Strg + K</span>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Wiki durchsuchen..." style="display: none;">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="#" class="nav-link active" data-page="home">
+                        <i class="ph ph-house"></i>
+                        <span>Startseite</span>
+                    </a>
+                </div>
+                
+                <div class="nav-item">
+                    <button class="nav-toggle" onclick="toggleDropdown('ablauf-dropdown')">
+                        <i class="ph ph-church"></i>
+                        <span>Ablauf der Messe</span>
+                        <i class="ph ph-caret-right ph-caret-down" id="ablauf-dropdown-icon"></i>
+                    </button>
+                    <div class="nav-dropdown" id="ablauf-dropdown">
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-cheers"></i>
+                            <span>Eröffnung</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-chat-circle-dots"></i>
+                            <span>Wortgottesdienst</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-bread"></i>
+                            <span>Eucharistie</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-hand-waving"></i>
+                            <span>Schluss</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <button class="nav-toggle" onclick="toggleDropdown('aufgaben-dropdown')">
+                        <i class="ph ph-list-checks"></i>
+                        <span>Messdiener Aufgaben</span>
+                        <i class="ph ph-caret-right ph-caret-down" id="aufgaben-dropdown-icon"></i>
+                    </button>
+                    <div class="nav-dropdown" id="aufgaben-dropdown">
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-church"></i>
+                            <span>Kerzenträger</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-bowl-steam"></i>
+                            <span>Weihrauchträger</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-person"></i>
+                            <span>Ministrant</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-lectern"></i>
+                            <span>Lektor</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-bread"></i>
+                            <span>Kommunionspender</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <button class="nav-toggle" onclick="toggleDropdown('gesten-dropdown')">
+                        <i class="ph ph-hands-praying"></i>
+                        <span>Gesten und Bewegungen</span>
+                        <i class="ph ph-caret-right ph-caret-down" id="gesten-dropdown-icon"></i>
+                    </button>
+                    <div class="nav-dropdown" id="gesten-dropdown">
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-person-simple-tai-chi"></i>
+                            <span>Kniebeugen</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-cross"></i>
+                            <span>Kreuzzeichen</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-hand"></i>
+                            <span>Handzeichen</span>
+                        </a>
+                        <a href="#" class="nav-link nav-link-sub">
+                            <i class="ph ph-calendar"></i>
+                            <span>Prozessionen</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="ph ph-books"></i>
+                        <span>Gebete und Antworten</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+            <div class="content-wrapper">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <h1>Willkommen beim Messdiener-Dienst</h1>
+                    <div class="welcome-card">
+                        <p>
+                            Als Messdiener hilfst du bei der Feier der Heiligen Messe mit. Dieses Wiki zeigt dir genau, 
+                            was du wann tun musst und welche Aufgaben zu deinem Dienst gehören.
+                        </p>
+                        <div class="quick-info">
+                            <div class="info-card">
+                                <h3>⛪ Ablauf der Messe</h3>
+                                <p>Erfahre, wie eine Messe aufgebaut ist und was in den einzelnen Teilen passiert.</p>
+                            </div>
+                            <div class="info-card">
+                                <h3>📋 Deine Aufgaben</h3>
+                                <p>Lerne deine Rolle als Kerzenträger, Ministrant oder Kommunionspender kennen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Important Basics -->
+                <section class="basics-section">
+                    <h2>Wichtige Grundlagen</h2>
+                    <div class="basics-grid">
+                        <a href="#" class="basic-card">
+                            <h3>🕊️ Eröffnung</h3>
+                            <p>Einzug, Kreuzzeichen und Eröffnungsgebet</p>
+                        </a>
+                        
+                        <a href="#" class="basic-card">
+                            <h3>🕯️ Kerzenträger</h3>
+                            <p>Deine Aufgaben beim Lichterdienst</p>
+                        </a>
+                        
+                        <a href="#" class="basic-card">
+                            <h3>🙏 Gebete</h3>
+                            <p>Wichtige Gebete und Antworten</p>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- First Service -->
+                <section class="first-service-section">
+                    <h2>Dein erster Dienst</h2>
+                    <div class="service-cards">
+                        <article class="service-card">
+                            <h3>📋 Vorbereitung</h3>
+                            <p>Komm 15 Minuten vor der Messe. Zieh deine Messdienerkleidung an und triff dich mit den anderen Messdienern in der Sakristei.</p>
+                        </article>
+                        
+                        <article class="service-card">
+                            <h3>⚠️ Wichtige Regeln</h3>
+                            <p>Sei pünktlich, trage saubere Kleidung und achte auf die Zeichen des Priesters. Frag immer nach, wenn du etwas nicht verstehst!</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
